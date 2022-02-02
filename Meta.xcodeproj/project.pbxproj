@@ -14,6 +14,9 @@
 		61A88AD62797EC0B002F91BF /* UserInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A88AD42797EC0B002F91BF /* UserInfo+CoreDataClass.swift */; };
 		61A88AD72797EC0B002F91BF /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A88AD52797EC0B002F91BF /* UserInfo+CoreDataProperties.swift */; };
 		61A88AD927982274002F91BF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A88AD827982273002F91BF /* DashboardViewController.swift */; };
+		61C8F27727AAD43F000C0293 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C8F27627AAD43F000C0293 /* Home.storyboard */; };
+		61C8F27927AAE806000C0293 /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C8F27827AAE806000C0293 /* Product.storyboard */; };
+		61C8F27B27AAE814000C0293 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C8F27A27AAE814000C0293 /* Settings.storyboard */; };
 		61ECDA1B27956ACF00069A8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECDA1A27956ACF00069A8E /* AppDelegate.swift */; };
 		61ECDA1D27956ACF00069A8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECDA1C27956ACF00069A8E /* SceneDelegate.swift */; };
 		61ECDA1F27956ACF00069A8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECDA1E27956ACF00069A8E /* ViewController.swift */; };
@@ -33,6 +36,9 @@
 		61A88AD42797EC0B002F91BF /* UserInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		61A88AD52797EC0B002F91BF /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		61A88AD827982273002F91BF /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		61C8F27627AAD43F000C0293 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		61C8F27827AAE806000C0293 /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
+		61C8F27A27AAE814000C0293 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		61ECDA1727956ACF00069A8E /* Meta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61ECDA1A27956ACF00069A8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61ECDA1C27956ACF00069A8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,9 @@
 				61F35B672799A75400BAEE5A /* ChangePasswordViewController.swift */,
 				61485F7927993A62002DCCF7 /* TableViewCell.swift */,
 				61ECDA2027956ACF00069A8E /* Main.storyboard */,
+				61C8F27627AAD43F000C0293 /* Home.storyboard */,
+				61C8F27827AAE806000C0293 /* Product.storyboard */,
+				61C8F27A27AAE814000C0293 /* Settings.storyboard */,
 				61ECDA2327956AD000069A8E /* Assets.xcassets */,
 				61ECDA2527956AD000069A8E /* LaunchScreen.storyboard */,
 				61ECDA2827956AD000069A8E /* Info.plist */,
@@ -165,8 +174,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				61ECDA2727956AD000069A8E /* LaunchScreen.storyboard in Resources */,
+				61C8F27927AAE806000C0293 /* Product.storyboard in Resources */,
 				61ECDA2427956AD000069A8E /* Assets.xcassets in Resources */,
+				61C8F27B27AAE814000C0293 /* Settings.storyboard in Resources */,
 				61ECDA2227956ACF00069A8E /* Main.storyboard in Resources */,
+				61C8F27727AAD43F000C0293 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
