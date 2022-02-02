@@ -19,9 +19,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         currentuserinfo = DatabaseHelper.shareInstance.currentUser
-        profileImage.layer.borderWidth = 1
+        profileImage.layer.borderWidth = 0
         profileImage.layer.masksToBounds = false
-        profileImage.layer.borderColor = UIColor.brown.cgColor
+//        profileImage.layer.borderColor = UIColor.brown.cgColor
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
 //        profileImage.image = UIImage(data: (currentuserinfo?.img as Data?)!)

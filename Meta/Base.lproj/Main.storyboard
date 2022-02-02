@@ -72,38 +72,38 @@
             <objects>
                 <viewController storyboardIdentifier="SignUpViewController" id="vsO-re-zk7" customClass="SignInViewController" customModule="Meta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t9h-WD-nf0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9D954A84-CB5C-43D4-9823-0AA20A17AC08_1_201_a" translatesAutoresizingMaskIntoConstraints="NO" id="SQS-qf-gfa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qT-qR-UHC">
-                                <rect key="frame" x="121" y="-15" width="133" height="48"/>
+                                <rect key="frame" x="121" y="29" width="133" height="48"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="40"/>
                                 <color key="textColor" red="0.66977833798080821" green="0.60219766853187551" blue="0.54347006771366346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inR-Ri-G8E">
-                                <rect key="frame" x="27" y="83" width="86.5" height="31"/>
+                                <rect key="frame" x="27" y="127" width="86.5" height="31"/>
                                 <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="25"/>
                                 <color key="textColor" red="0.35782645763745302" green="0.43958517505407196" blue="0.47584683548080808" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0s-2O-1wL">
-                                <rect key="frame" x="27" y="181" width="110" height="31"/>
+                                <rect key="frame" x="27" y="225" width="110" height="31"/>
                                 <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="25"/>
                                 <color key="textColor" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2wx-GQ-x92">
-                                <rect key="frame" x="28" y="220" width="319" height="34"/>
+                                <rect key="frame" x="28" y="264" width="319" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjW-3e-Hpg">
-                                <rect key="frame" x="129" y="288" width="117" height="51"/>
+                                <rect key="frame" x="129" y="332" width="117" height="51"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign In" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" name="Charter-Roman" family="Charter" pointSize="30"/>
@@ -115,13 +115,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYa-PN-boS">
-                                <rect key="frame" x="60" y="511" width="255" height="31"/>
+                                <rect key="frame" x="60" y="531" width="255" height="31"/>
                                 <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="25"/>
                                 <color key="textColor" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daA-8H-rdL">
-                                <rect key="frame" x="132.5" y="546" width="110.5" height="45"/>
+                                <rect key="frame" x="132.5" y="566" width="110.5" height="45"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Sign Up" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" name="Charter-Roman" family="Charter" pointSize="25"/>
                                     <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -133,7 +133,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-Tc-YdH">
-                                <rect key="frame" x="28" y="122" width="319" height="34"/>
+                                <rect key="frame" x="28" y="166" width="319" height="34"/>
                                 <color key="tintColor" red="0.062985724460000003" green="0.44975609220000001" blue="0.78851010099999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -184,14 +184,14 @@
             <objects>
                 <viewController storyboardIdentifier="SignOutViewController" id="ddI-9K-7G5" customClass="SignUpViewController" customModule="Meta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dXM-05-cML" customClass="Sign">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9D954A84-CB5C-43D4-9823-0AA20A17AC08_1_201_a" translatesAutoresizingMaskIntoConstraints="NO" id="NwF-B2-YbV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Raq-16-L89">
-                                <rect key="frame" x="136.5" y="597" width="102" height="45"/>
+                                <rect key="frame" x="136.5" y="617" width="102" height="45"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Sign In" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" name="Charter-Roman" family="Charter" pointSize="25"/>
@@ -204,7 +204,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVp-K2-3uA">
-                                <rect key="frame" x="123.5" y="464" width="128" height="51"/>
+                                <rect key="frame" x="123.5" y="508" width="128" height="51"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" name="Charter-Roman" family="Charter" pointSize="30"/>
@@ -216,75 +216,75 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfd-Xo-j7g">
-                                <rect key="frame" x="115.5" y="-13" width="144" height="48"/>
+                                <rect key="frame" x="115.5" y="31" width="144" height="48"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="40"/>
                                 <color key="textColor" red="0.66977833799999997" green="0.60219766850000001" blue="0.54347006769999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKN-IZ-6KE">
-                                <rect key="frame" x="44" y="43" width="67.5" height="31"/>
+                                <rect key="frame" x="44" y="87" width="67.5" height="31"/>
                                 <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="25"/>
                                 <color key="textColor" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O8-ID-iVX">
-                                <rect key="frame" x="44" y="126" width="149" height="31"/>
+                                <rect key="frame" x="44" y="170" width="149" height="31"/>
                                 <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="25"/>
                                 <color key="textColor" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnN-rq-bAN">
-                                <rect key="frame" x="44" y="208" width="141" height="31"/>
+                                <rect key="frame" x="44" y="252" width="141" height="31"/>
                                 <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="25"/>
                                 <color key="textColor" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsV-rI-Bv8">
-                                <rect key="frame" x="44" y="290" width="110" height="31"/>
+                                <rect key="frame" x="44" y="334" width="110" height="31"/>
                                 <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="25"/>
                                 <color key="textColor" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="378-Mj-9cZ">
-                                <rect key="frame" x="44" y="372" width="211.5" height="31"/>
+                                <rect key="frame" x="44" y="416" width="211.5" height="31"/>
                                 <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="25"/>
                                 <color key="textColor" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zZr-Mk-92E">
-                                <rect key="frame" x="44" y="82" width="287" height="34"/>
+                                <rect key="frame" x="44" y="126" width="287" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nV8-jf-sNe">
-                                <rect key="frame" x="44" y="165" width="287" height="34"/>
+                                <rect key="frame" x="44" y="209" width="287" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type User ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="COk-1p-Jre">
-                                <rect key="frame" x="44" y="247" width="287" height="34"/>
+                                <rect key="frame" x="44" y="291" width="287" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1c9-DT-LaD">
-                                <rect key="frame" x="44" y="329" width="287" height="34"/>
+                                <rect key="frame" x="44" y="373" width="287" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type password again" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FeR-gC-L6n">
-                                <rect key="frame" x="44" y="411" width="287" height="34"/>
+                                <rect key="frame" x="44" y="455" width="287" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKW-jn-ZqW">
-                                <rect key="frame" x="47" y="562" width="281" height="31"/>
+                                <rect key="frame" x="47" y="582" width="281" height="31"/>
                                 <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="25"/>
                                 <color key="textColor" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Xh8-xm-hTM">
-                                <rect key="frame" x="230" y="165" width="101" height="34"/>
+                                <rect key="frame" x="230" y="209" width="101" height="34"/>
                                 <color key="tintColor" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="JWy-Fp-mXq"/>
@@ -380,7 +380,7 @@
                                     <action selector="logoutButton:" destination="7Ry-qY-uji" eventType="touchUpInside" id="LjI-I2-EMJ"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="de7834s-6515bd40-8b2c-4dc6-a843-5ac1a95a8b55" translatesAutoresizingMaskIntoConstraints="NO" id="GVC-Qi-pzI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="245-2454602_tanni-chand-default-user-image-png" translatesAutoresizingMaskIntoConstraints="NO" id="GVC-Qi-pzI">
                                 <rect key="frame" x="135" y="30" width="105" height="105"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgp-Ib-ukK">
@@ -597,13 +597,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hiD-XT-uBR"/>
-        <segue reference="Gqx-hc-2oR"/>
+        <segue reference="hFt-oQ-rJc"/>
+        <segue reference="DhL-EI-TEv"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="245-2454602_tanni-chand-default-user-image-png" width="502" height="502"/>
         <image name="9D954A84-CB5C-43D4-9823-0AA20A17AC08_1_201_a" width="1080" height="1920"/>
         <image name="Wipro_Primary_Logo_Color_RGB.svg" width="1024" height="1024"/>
-        <image name="de7834s-6515bd40-8b2c-4dc6-a843-5ac1a95a8b55" width="300" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
