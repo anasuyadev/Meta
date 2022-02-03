@@ -109,7 +109,9 @@
                             <constraint firstItem="hqV-wk-nKI" firstAttribute="trailing" secondItem="MFf-fh-P7f" secondAttribute="trailing" id="xXe-A7-B2I"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="s7h-vI-3xj"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="s7h-vI-3xj">
+                        <color key="badgeColor" red="0.32918897819999998" green="0.76404127990000004" blue="0.53555228610000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="q2E-Dz-Qdw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
