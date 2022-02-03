@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6109C94E27ABAB2900CE264B /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109C94D27ABAB2900CE264B /* ProductsViewController.swift */; };
+		6109C95027ABAD7400CE264B /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109C94F27ABAD7400CE264B /* ProductDetailsViewController.swift */; };
+		6109C95227ABD89F00CE264B /* ProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109C95127ABD89F00CE264B /* ProductData.swift */; };
+		6109C95427ABD8B200CE264B /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109C95327ABD8B200CE264B /* ProductManager.swift */; };
+		6109C95627ABD8C900CE264B /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6109C95527ABD8C900CE264B /* ProductModel.swift */; };
 		611691CA2795C4DF0063824F /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 611691C82795C4DF0063824F /* CoreDataModel.xcdatamodeld */; };
 		61485F7A27993A62002DCCF7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61485F7927993A62002DCCF7 /* TableViewCell.swift */; };
 		61773FA327969A7F00FF84D8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61773FA227969A7F00FF84D8 /* CoreData.framework */; };
@@ -29,6 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6109C94D27ABAB2900CE264B /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		6109C94F27ABAD7400CE264B /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		6109C95127ABD89F00CE264B /* ProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductData.swift; sourceTree = "<group>"; };
+		6109C95327ABD8B200CE264B /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
+		6109C95527ABD8C900CE264B /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		611691C92795C4DF0063824F /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		61485F7927993A62002DCCF7 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		61773FA227969A7F00FF84D8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -102,6 +112,8 @@
 				61ECDA2E27957F4200069A8E /* SignInViewController.swift */,
 				61A88AD827982273002F91BF /* DashboardViewController.swift */,
 				61F35B672799A75400BAEE5A /* ChangePasswordViewController.swift */,
+				6109C94D27ABAB2900CE264B /* ProductsViewController.swift */,
+				6109C94F27ABAD7400CE264B /* ProductDetailsViewController.swift */,
 				61485F7927993A62002DCCF7 /* TableViewCell.swift */,
 				61ECDA2027956ACF00069A8E /* Main.storyboard */,
 				61C8F27627AAD43F000C0293 /* Home.storyboard */,
@@ -111,6 +123,9 @@
 				61ECDA2527956AD000069A8E /* LaunchScreen.storyboard */,
 				61ECDA2827956AD000069A8E /* Info.plist */,
 				611691C82795C4DF0063824F /* CoreDataModel.xcdatamodeld */,
+				6109C95127ABD89F00CE264B /* ProductData.swift */,
+				6109C95327ABD8B200CE264B /* ProductManager.swift */,
+				6109C95527ABD8C900CE264B /* ProductModel.swift */,
 			);
 			path = Meta;
 			sourceTree = "<group>";
@@ -192,12 +207,17 @@
 				61ECDA2F27957F4200069A8E /* SignInViewController.swift in Sources */,
 				61773FA527969CE900FF84D8 /* DatabaseHelper.swift in Sources */,
 				61ECDA1F27956ACF00069A8E /* ViewController.swift in Sources */,
+				6109C95627ABD8C900CE264B /* ProductModel.swift in Sources */,
+				6109C94E27ABAB2900CE264B /* ProductsViewController.swift in Sources */,
 				61A88AD72797EC0B002F91BF /* UserInfo+CoreDataProperties.swift in Sources */,
 				611691CA2795C4DF0063824F /* CoreDataModel.xcdatamodeld in Sources */,
 				61ECDA31279584D600069A8E /* SignUpViewController.swift in Sources */,
+				6109C95027ABAD7400CE264B /* ProductDetailsViewController.swift in Sources */,
 				61485F7A27993A62002DCCF7 /* TableViewCell.swift in Sources */,
 				61ECDA1B27956ACF00069A8E /* AppDelegate.swift in Sources */,
 				61A88AD927982274002F91BF /* DashboardViewController.swift in Sources */,
+				6109C95427ABD8B200CE264B /* ProductManager.swift in Sources */,
+				6109C95227ABD89F00CE264B /* ProductData.swift in Sources */,
 				61F35B682799A75400BAEE5A /* ChangePasswordViewController.swift in Sources */,
 				61A88AD62797EC0B002F91BF /* UserInfo+CoreDataClass.swift in Sources */,
 				61ECDA1D27956ACF00069A8E /* SceneDelegate.swift in Sources */,
