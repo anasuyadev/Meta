@@ -379,7 +379,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="eKL-xF-WPH">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ZXd-4D-Pg1" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" automaticallyAdjustsScrollViewInsets="NO" id="ZXd-4D-Pg1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gWk-gP-jSS">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -428,7 +428,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hiD-XT-uBR"/>
+        <segue reference="hFt-oQ-rJc"/>
         <segue reference="DhL-EI-TEv"/>
     </inferredMetricsTieBreakers>
     <resources>

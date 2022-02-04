@@ -9,10 +9,13 @@ import Foundation
 import UIKit
 struct ProductData
 {
-//    let title = Title
+    let title: String
+    let price: String
+    let description: String
+    let imageUrl: String
     
 }
-struct Title
-{
-    
-}
+//struct Title
+//{
+//
+//}

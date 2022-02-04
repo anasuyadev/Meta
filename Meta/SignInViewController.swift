@@ -48,8 +48,8 @@ class SignInViewController: UIViewController {
 //                let dh = DatabaseHelper()
 //                photos = dh.retrieveImage(retrieveUserImage: (currentuserinfo?.userid)!)
 //                self.currentuserinfo?.img = photos
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar") 
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             else
