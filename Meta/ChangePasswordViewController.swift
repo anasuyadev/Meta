@@ -79,7 +79,7 @@ class ChangePasswordViewController: UIViewController {
             {
                 DatabaseHelper.shareInstance.update(updateUserId: (currentuserinfo?.userid)!, modifiedPassword: newPasswordField.text!, confirmModifiedPasword: confirmPasswordField.text!)
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+                let vc = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }

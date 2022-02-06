@@ -12,6 +12,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     var currentuserinfo: UserInfo?
     
     @IBAction func editProfile(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBOutlet weak var settingsTable: UITableView!
     

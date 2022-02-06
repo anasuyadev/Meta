@@ -19,10 +19,12 @@
 		61773FA527969CE900FF84D8 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61773FA427969CE900FF84D8 /* DatabaseHelper.swift */; };
 		61A88AD62797EC0B002F91BF /* UserInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A88AD42797EC0B002F91BF /* UserInfo+CoreDataClass.swift */; };
 		61A88AD72797EC0B002F91BF /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A88AD52797EC0B002F91BF /* UserInfo+CoreDataProperties.swift */; };
-		61A88AD927982274002F91BF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A88AD827982273002F91BF /* DashboardViewController.swift */; };
+		61A88AD927982274002F91BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A88AD827982273002F91BF /* HomeViewController.swift */; };
 		61C8F27727AAD43F000C0293 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C8F27627AAD43F000C0293 /* Home.storyboard */; };
 		61C8F27927AAE806000C0293 /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C8F27827AAE806000C0293 /* Product.storyboard */; };
 		61C8F27B27AAE814000C0293 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C8F27A27AAE814000C0293 /* Settings.storyboard */; };
+		61D0164C27B02214004124D1 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0164B27B02214004124D1 /* EditProfileViewController.swift */; };
+		61D0164E27B04AF5004124D1 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0164D27B04AF5004124D1 /* PrivacyPolicyViewController.swift */; };
 		61DA0BD127AD111500F6767B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DA0BD027AD111500F6767B /* SettingsViewController.swift */; };
 		61DA0BD327AD114200F6767B /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DA0BD227AD114200F6767B /* SettingsTableViewCell.swift */; };
 		61ECDA1B27956ACF00069A8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECDA1A27956ACF00069A8E /* AppDelegate.swift */; };
@@ -49,10 +51,12 @@
 		61773FA427969CE900FF84D8 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		61A88AD42797EC0B002F91BF /* UserInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		61A88AD52797EC0B002F91BF /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		61A88AD827982273002F91BF /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		61A88AD827982273002F91BF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		61C8F27627AAD43F000C0293 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		61C8F27827AAE806000C0293 /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
 		61C8F27A27AAE814000C0293 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		61D0164B27B02214004124D1 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		61D0164D27B04AF5004124D1 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		61DA0BD027AD111500F6767B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		61DA0BD227AD114200F6767B /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		61ECDA1727956ACF00069A8E /* Meta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meta.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,14 +120,16 @@
 				61A88AD52797EC0B002F91BF /* UserInfo+CoreDataProperties.swift */,
 				61ECDA30279584D600069A8E /* SignUpViewController.swift */,
 				61ECDA2E27957F4200069A8E /* SignInViewController.swift */,
-				61A88AD827982273002F91BF /* DashboardViewController.swift */,
+				61A88AD827982273002F91BF /* HomeViewController.swift */,
 				61485F7927993A62002DCCF7 /* TableViewCell.swift */,
-				61F35B672799A75400BAEE5A /* ChangePasswordViewController.swift */,
 				614FB28927AC6A6E00C7AD38 /* ProductsViewController.swift */,
-				6109C94F27ABAD7400CE264B /* ProductDetailsViewController.swift */,
 				614FB28F27AC6EBB00C7AD38 /* ProductTableViewCell.swift */,
+				6109C94F27ABAD7400CE264B /* ProductDetailsViewController.swift */,
 				61DA0BD027AD111500F6767B /* SettingsViewController.swift */,
 				61DA0BD227AD114200F6767B /* SettingsTableViewCell.swift */,
+				61D0164B27B02214004124D1 /* EditProfileViewController.swift */,
+				61F35B672799A75400BAEE5A /* ChangePasswordViewController.swift */,
+				61D0164D27B04AF5004124D1 /* PrivacyPolicyViewController.swift */,
 				61ECDA2027956ACF00069A8E /* Main.storyboard */,
 				61C8F27627AAD43F000C0293 /* Home.storyboard */,
 				61C8F27827AAE806000C0293 /* Product.storyboard */,
@@ -214,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61ECDA2F27957F4200069A8E /* SignInViewController.swift in Sources */,
+				61D0164E27B04AF5004124D1 /* PrivacyPolicyViewController.swift in Sources */,
 				614FB28A27AC6A6E00C7AD38 /* ProductsViewController.swift in Sources */,
 				61773FA527969CE900FF84D8 /* DatabaseHelper.swift in Sources */,
 				61ECDA1F27956ACF00069A8E /* ViewController.swift in Sources */,
@@ -226,13 +233,14 @@
 				61485F7A27993A62002DCCF7 /* TableViewCell.swift in Sources */,
 				61ECDA1B27956ACF00069A8E /* AppDelegate.swift in Sources */,
 				614FB29027AC6EBB00C7AD38 /* ProductTableViewCell.swift in Sources */,
-				61A88AD927982274002F91BF /* DashboardViewController.swift in Sources */,
+				61A88AD927982274002F91BF /* HomeViewController.swift in Sources */,
 				6109C95427ABD8B200CE264B /* ProductManager.swift in Sources */,
 				6109C95227ABD89F00CE264B /* ProductData.swift in Sources */,
 				61F35B682799A75400BAEE5A /* ChangePasswordViewController.swift in Sources */,
 				61A88AD62797EC0B002F91BF /* UserInfo+CoreDataClass.swift in Sources */,
 				61DA0BD327AD114200F6767B /* SettingsTableViewCell.swift in Sources */,
 				61ECDA1D27956ACF00069A8E /* SceneDelegate.swift in Sources */,
+				61D0164C27B02214004124D1 /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

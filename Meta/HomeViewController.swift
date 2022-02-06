@@ -1,5 +1,5 @@
 //
-//  DashboardViewController.swift
+//  HomeViewController.swift
 //  Meta
 //
 //  Created by Anasuya Dev on 19/01/22.
@@ -8,7 +8,7 @@
 import UIKit
 import MobileCoreServices
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
    
     var currentuserinfo: UserInfo?
      
@@ -21,17 +21,14 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         currentuserinfo = DatabaseHelper.shareInstance.currentUser
         profileImage.layer.borderWidth = 0
         profileImage.layer.masksToBounds = false
-//        profileImage.layer.borderColor = UIColor.brown.cgColor
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
-//        profileImage.image = UIImage(data: (currentuserinfo?.img as Data?)!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         currentuserinfo = DatabaseHelper.shareInstance.currentUser
-//        DatabaseHelper.shareInstance.updatePic(updatePicUserId: (currentuserinfo?.userid)!, profileImage: profileImage as Any)
         if let pic = currentuserinfo?.img
         {
             profileImage.image = UIImage(data: pic as Data)
@@ -42,28 +39,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    
-    @IBAction func logoutButton(_ sender: UIButton) {
-        
-            let myAlert = UIAlertController(title: "Logout", message: "Are you sure want to logout?", preferredStyle: UIAlertController.Style.alert)
-            let noAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel){(ACTION) in
-                print("No BUTTON TAPPED")
-            }
-            let yesAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive){ action -> Void in
-                print("Yes BUTTON TAPPED")
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            myAlert.addAction(noAction)
-            myAlert.addAction(yesAction)
-            self.present(myAlert, animated: true, completion: nil)
-    }
-
-    
-    
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,55 +61,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.titleLabel.text = "User ID "
             cell.outputLabel.text = currentuserinfo?.userid
         }
-        else if indexPath.row == 3
-        {
-            cell.titleLabel.text = "Change password "
-            cell.outputLabel.text = "►"
-        }
-        else if indexPath.row == 4
-        {
-            cell.titleLabel.text = "Delete User "
-            cell.outputLabel.text = ""
-        }
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 3
-        {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "ChangePasswordViewController") as! ChangePasswordViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        if indexPath.row == 4
-        {
-            let myAlert = UIAlertController(title: "Delete User", message: "Are you sure want to delete your account?", preferredStyle: UIAlertController.Style.alert)
-            let noAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel){(ACTION) in
-                print("No BUTTON TAPPED")
-            }
-            let yesAction = UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive){ action -> Void in
-                print("Yes BUTTON TAPPED")
-                DatabaseHelper.shareInstance.delete(deleteUserId: (self.currentuserinfo?.userid)!)
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            myAlert.addAction(noAction)
-            myAlert.addAction(yesAction)
-            self.present(myAlert, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func choosePic(_ sender: UIButton) {
-//        let imagePicker = UIImagePickerController()
-//        imagePicker.delegate = self
-//        imagePicker.allowsEditing = false
-//        imagePicker.sourceType = .photoLibrary
-//        present(imagePicker, animated: true)
-        
-    }
-    
-    
+
     @IBAction func onClickSelectImage(_ sender: Any) {
         actionSheet()
     }

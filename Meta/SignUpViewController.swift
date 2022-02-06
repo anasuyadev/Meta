@@ -91,7 +91,7 @@ class SignUpViewController: UIViewController {
             let dict = ["name":nameField.text, "birthdate":birthDateField.text, "userid":userIDField.text,"password":passwordField.text, "confirmpassword":confirmPasswordField.text]
             DatabaseHelper.shareInstance.save(object: dict as! [String:String])
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+            let vc = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

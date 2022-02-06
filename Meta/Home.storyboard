@@ -11,25 +11,11 @@
         <!--Home-->
         <scene sceneID="gBj-1O-C6V">
             <objects>
-                <viewController storyboardIdentifier="DashboardViewController" id="wbX-pG-lPW" customClass="DashboardViewController" customModule="Meta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="wbX-pG-lPW" customClass="HomeViewController" customModule="Meta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MFf-fh-P7f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9D954A84-CB5C-43D4-9823-0AA20A17AC08_1_201_a" translatesAutoresizingMaskIntoConstraints="NO" id="hqV-wk-nKI">
-                                <rect key="frame" x="0.0" y="383" width="375" height="284"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ur-ms-OTM">
-                                <rect key="frame" x="130" y="534" width="115" height="51"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Logout" cornerStyle="capsule">
-                                    <fontDescription key="titleFontDescription" name="Charter-Roman" family="Charter" pointSize="30"/>
-                                    <color key="baseBackgroundColor" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="logoutButton:" destination="wbX-pG-lPW" eventType="touchUpInside" id="YXh-j6-fsG"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="245-2454602_tanni-chand-default-user-image-png" translatesAutoresizingMaskIntoConstraints="NO" id="h9F-Uf-gpS">
                                 <rect key="frame" x="135" y="30" width="105" height="105"/>
                             </imageView>
@@ -40,9 +26,15 @@
                                     <action selector="onClickSelectImage:" destination="wbX-pG-lPW" eventType="touchUpInside" id="h3V-mC-QDF"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9D954A84-CB5C-43D4-9823-0AA20A17AC08_1_201_a" translatesAutoresizingMaskIntoConstraints="NO" id="90x-xY-hdr">
+                                <rect key="frame" x="0.0" y="165" width="375" height="502"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="elg-DN-grI">
                                 <rect key="frame" x="0.0" y="165" width="375" height="161"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="161" id="FM5-BQ-JHp"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" rowHeight="80" id="wng-UQ-nVO" customClass="TableViewCell" customModule="Meta" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="375" height="80"/>
@@ -88,25 +80,22 @@
                         <viewLayoutGuide key="safeArea" id="p5E-vR-W2E"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hqV-wk-nKI" firstAttribute="top" secondItem="elg-DN-grI" secondAttribute="top" constant="218" id="0ul-g1-cy5"/>
                             <constraint firstItem="lUu-Mn-qj3" firstAttribute="leading" secondItem="p5E-vR-W2E" secondAttribute="leading" constant="135" id="75s-4f-pBz"/>
                             <constraint firstItem="elg-DN-grI" firstAttribute="leading" secondItem="MFf-fh-P7f" secondAttribute="leading" id="9Be-SD-zWm"/>
-                            <constraint firstItem="3ur-ms-OTM" firstAttribute="top" secondItem="elg-DN-grI" secondAttribute="bottom" constant="208" id="9G7-Fd-nVd"/>
                             <constraint firstItem="elg-DN-grI" firstAttribute="top" secondItem="p5E-vR-W2E" secondAttribute="top" constant="165" id="AfF-Nt-mUQ"/>
+                            <constraint firstItem="90x-xY-hdr" firstAttribute="leading" secondItem="elg-DN-grI" secondAttribute="leading" id="BPm-UO-Q5S"/>
                             <constraint firstItem="elg-DN-grI" firstAttribute="top" secondItem="h9F-Uf-gpS" secondAttribute="bottom" constant="30" id="I7c-oC-CNl"/>
-                            <constraint firstItem="hqV-wk-nKI" firstAttribute="bottom" secondItem="MFf-fh-P7f" secondAttribute="bottom" id="IeJ-qg-hTD"/>
                             <constraint firstItem="lUu-Mn-qj3" firstAttribute="centerX" secondItem="MFf-fh-P7f" secondAttribute="centerX" id="JqG-WU-UYj"/>
+                            <constraint firstAttribute="bottom" secondItem="90x-xY-hdr" secondAttribute="bottom" id="L7p-8g-PPy"/>
                             <constraint firstItem="h9F-Uf-gpS" firstAttribute="centerX" secondItem="elg-DN-grI" secondAttribute="centerX" id="WEm-Ye-B1w"/>
                             <constraint firstItem="h9F-Uf-gpS" firstAttribute="leading" secondItem="p5E-vR-W2E" secondAttribute="leading" constant="135" id="YTO-06-wsB"/>
-                            <constraint firstItem="3ur-ms-OTM" firstAttribute="centerX" secondItem="MFf-fh-P7f" secondAttribute="centerX" id="YXi-cE-tdR"/>
+                            <constraint firstItem="90x-xY-hdr" firstAttribute="top" secondItem="elg-DN-grI" secondAttribute="top" id="e0M-c1-Me9"/>
                             <constraint firstItem="lUu-Mn-qj3" firstAttribute="centerX" secondItem="MFf-fh-P7f" secondAttribute="centerX" id="gQy-T8-pgX"/>
                             <constraint firstItem="h9F-Uf-gpS" firstAttribute="top" secondItem="p5E-vR-W2E" secondAttribute="top" constant="30" id="gqc-1V-eiw"/>
-                            <constraint firstItem="p5E-vR-W2E" firstAttribute="bottom" secondItem="3ur-ms-OTM" secondAttribute="bottom" constant="33" id="hM8-Kq-o0P"/>
-                            <constraint firstItem="hqV-wk-nKI" firstAttribute="leading" secondItem="MFf-fh-P7f" secondAttribute="leading" id="ppA-hQ-fyP"/>
                             <constraint firstItem="lUu-Mn-qj3" firstAttribute="top" secondItem="p5E-vR-W2E" secondAttribute="top" constant="30" id="sXJ-MM-YV7"/>
                             <constraint firstItem="elg-DN-grI" firstAttribute="top" secondItem="lUu-Mn-qj3" secondAttribute="bottom" constant="30" id="tCD-zi-Qfu"/>
+                            <constraint firstItem="90x-xY-hdr" firstAttribute="trailing" secondItem="elg-DN-grI" secondAttribute="trailing" id="tk6-fp-nar"/>
                             <constraint firstAttribute="trailing" secondItem="elg-DN-grI" secondAttribute="trailing" id="tqG-MB-eIx"/>
-                            <constraint firstItem="hqV-wk-nKI" firstAttribute="trailing" secondItem="MFf-fh-P7f" secondAttribute="trailing" id="xXe-A7-B2I"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="s7h-vI-3xj">
@@ -121,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyo-uW-Kp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-772" y="48"/>
+            <point key="canvasLocation" x="-772" y="47.226386806596707"/>
         </scene>
     </scenes>
     <resources>
