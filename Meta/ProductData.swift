@@ -7,12 +7,12 @@
 
 import Foundation
 import UIKit
-struct ProductData
+struct ProductData: Decodable
 {
     let title: String
-    let price: String
+    let price: Float
     let description: String
-    let imageUrl: String
+    let image: String
     
 }
 //struct Title

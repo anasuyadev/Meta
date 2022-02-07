@@ -11,9 +11,9 @@ class ProductTableViewCell: UITableViewCell {
 
     var product: ProductData! {
         didSet{
-            titleLabel.text = product.price
+            titleLabel.text = product.title
             descriptionLabel.text = product.description
-            priceLabel.text = product.price
+            priceLabel.text = "$\(product.price)"
         }
     }
     
