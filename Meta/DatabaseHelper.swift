@@ -15,22 +15,6 @@ class DatabaseHelper
     var currentUser: UserInfo?
     static var shareInstance = DatabaseHelper()
     let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-    
-//    func saveImageInCoreDate()
-//    {
-//        let userInfo = NSEntityDescription.insertNewObject(forEntityName: "UserInfo", into: context!) as! UserInfo
-//        userInfo.img = image?.jpegData(compressionQuality: 1) as NSData?
-////        userInfo.img = UIImageJPEGRepresentation
-//
-//        currentUser = userInfo
-//        do{
-//            try context?.save()
-//            print("Image saved")
-//        }
-//        catch{
-//            print("Couldn't save image")
-//        }
-//    }
 
     func save(object:[String:String])
     {
@@ -104,12 +88,26 @@ class DatabaseHelper
     {
         let userInfo = retrieve(retrieveUserId: updatePicUserId)
         userInfo[0].img = profileImageData
+        currentUser = userInfo[0]
         do{
             try context?.save()
             print("Pic saved")
         }
         catch{
             print("Pic not saved")
+        }
+    }
+    func editProfile(editUserID: String, editedName: String)
+    {
+        let userInfo = retrieve(retrieveUserId: editUserID)
+        userInfo[0].name = editedName
+        currentUser = userInfo[0]
+        do{
+            try context?.save()
+            
+        }
+        catch{
+            print("Data not edited")
         }
     }
    

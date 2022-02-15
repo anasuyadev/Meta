@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 struct ProductData: Decodable
 {
+    let id: Int
     let title: String
     let price: Float
     let description: String

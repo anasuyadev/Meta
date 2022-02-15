@@ -6,24 +6,83 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     var currentuserinfo: UserInfo?
     
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    
+    
     @IBAction func editProfile(_ sender: UIButton) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        showMiracle()
+        userNameLabel.text = currentuserinfo?.name
+        if let pic = currentuserinfo?.img
+        {
+            profileImage.image = UIImage(data: pic as Data)
+        }
     }
+    
     @IBOutlet weak var settingsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         currentuserinfo = DatabaseHelper.shareInstance.currentUser
+        profileImage.layer.borderWidth = 0
+        profileImage.layer.masksToBounds = false
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
 
+        userNameLabel.text = currentuserinfo?.name
+        let dateOfBirth = currentuserinfo?.birthdate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy"
+        if let date = formatter.date(from: dateOfBirth!)
+        {
+        
+        let today = Date()
+        let gregorian = Calendar(identifier: .gregorian)
+        let ageComponents = gregorian.dateComponents([.year], from: date, to: Date())
+            let age = ageComponents.year!
+            ageLabel.text = "\(age) years"
+        }
+        
+        if let pic = currentuserinfo?.img
+        {
+            profileImage.image = UIImage(data: pic as Data)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    @objc func showMiracle()
+    {
+     let slideVC = OverlayView()
+        slideVC.modalTransitionStyle = .flipHorizontal
+        slideVC.transitioningDelegate = self
+        self.present(slideVC, animated: true, completion: nil)
+//        var modalPresent = (self.OverlayView());
+//        if modalPresent == true {
+        if ((slideVC.isBeingDismissed) != nil){
+            userNameLabel.text = currentuserinfo?.name
+            if let pic = currentuserinfo?.img
+            {
+                profileImage.image = UIImage(data: pic as Data)
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     
@@ -70,6 +129,22 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             let vc = storyBoard.instantiateViewController(withIdentifier: "ChangePasswordViewController") as! ChangePasswordViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
+         if indexPath.row == 1
+         {
+             let storyBoard: UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+             let vc = storyBoard.instantiateViewController(withIdentifier: "TermsAndConditionsViewController") as! TermsAndConditionsViewController
+             self.navigationController?.pushViewController(vc, animated: true)
+         }
+         if indexPath.row == 2
+         {
+             let storyBoard: UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+             let vc = storyBoard.instantiateViewController(withIdentifier: "PrivacyPolicyViewController") as! PrivacyPolicyViewController
+             self.navigationController?.pushViewController(vc, animated: true)
+         }
+         if indexPath.row == 3
+         {
+            presentShareSheet()
+         }
         if indexPath.row == 4
         {
             let myAlert = UIAlertController(title: "Delete User", message: "Are you sure want to delete your account?", preferredStyle: UIAlertController.Style.alert)
@@ -104,5 +179,49 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             self.present(myAlert, animated: true, completion: nil)
         }
         
+    }
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
+    {
+        print(info)
+        let data = convertFromUIimageToDict(info)
+        if let editingImage = data[convertInfoKey(input: (UIImagePickerController.InfoKey.editedImage))] as? UIImage
+        {
+            print(editingImage)
+            self.profileImage.image = editingImage
+            DatabaseHelper.shareInstance.image = profileImage.image
+            DatabaseHelper.shareInstance.updatePic(updatePicUserId: (currentuserinfo?.userid)!, profileImageData: (profileImage.image?.jpegData(compressionQuality: 1) as? NSData)!)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func convertFromUIimageToDict( _ input :[UIImagePickerController.InfoKey : Any]) -> [String : Any]
+    {
+        return Dictionary(uniqueKeysWithValues: input.map({ key, value in (key.rawValue, value)}))
+    }
+    
+    func convertInfoKey(input: UIImagePickerController.InfoKey) -> String
+    {
+        return input.rawValue
+    }
+    
+    private func presentShareSheet() {
+        guard let image = UIImage(systemName: "bell"), let url = URL(string: "https://www.google.com") else {
+            return
+        }
+        let shareSheetVC = UIActivityViewController(
+        activityItems: [image,url],applicationActivities: nil)
+        present(shareSheetVC, animated: true)
+        }
+}
+extension SettingsViewController: UIViewControllerTransitioningDelegate
+{
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

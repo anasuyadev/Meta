@@ -18,9 +18,17 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="245-2454602_tanni-chand-default-user-image-png" translatesAutoresizingMaskIntoConstraints="NO" id="h9F-Uf-gpS">
                                 <rect key="frame" x="135" y="30" width="105" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="Cow-nS-7GI"/>
+                                    <constraint firstAttribute="height" constant="105" id="qx9-vb-buk"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUu-Mn-qj3">
                                 <rect key="frame" x="135" y="30" width="105" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="Kk6-VN-XNm"/>
+                                    <constraint firstAttribute="width" constant="105" id="YPg-uf-4cK"/>
+                                </constraints>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="onClickSelectImage:" destination="wbX-pG-lPW" eventType="touchUpInside" id="h3V-mC-QDF"/>

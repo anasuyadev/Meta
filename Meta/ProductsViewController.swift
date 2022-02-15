@@ -7,33 +7,62 @@
 
 import UIKit
 import Combine
-
+//create protocol
+protocol ProductDetailsDelegate
+{
+    func productsDetails(_ productdetailid: Int)
+}
 class ProductsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    var delegate: ProductDetailsDelegate?
+//    var productdetailid: Int = 0
+//    static var shareProduct = ProductsViewController()
     private var products = [ProductData]()
     private var api = ProductManager()
     private var cancellable = Set<AnyCancellable>()
 
     @IBOutlet weak var productsTable: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     fileprivate func getProducts()
     {
         api.products()
             .receive(on: DispatchQueue.main)
-            .sink { (products) in
-                self.products = products
-                self.productsTable.reloadData()
+            .sink { [weak self] (products) in
+                self?.products = products
+                self?.productsTable.reloadData()
             }
             .store(in: &cancellable)
     }
     
+//    fileprivate func getProductDetails()
+//    {
+//        api.productsDetails(productDetailVCId: productdetailid)
+//            .receive(on: DispatchQueue.main)
+//            .sink { [weak self] (products) in
+//                self?.products = products
+//                self?.productsTable.reloadData()
+//            }
+//            .store(in: &cancellable)
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        spinner.startAnimating()
         getProducts()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     // MARK: - Table view data source
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,8 +72,23 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as! ProductTableViewCell
-
+         cell.selectionStyle = .none
          cell.product = products[indexPath.row]
         return cell
+    }
+//   extract using indexpath , product detail id var 
+//    didselect - navigate to next
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row >= 0)
+        {
+//            call api, pass prod  id
+            delegate?.productsDetails(indexPath.row + 1)
+//            productdetailid = indexPath.row + 1
+//            getProductDetails()
+//            ProductModel.shareProduct.productDetailVCId = productdetailid
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Product", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

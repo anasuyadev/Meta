@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import LocalAuthentication
 
 class SignInViewController: UIViewController {
     
@@ -16,9 +17,19 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentuserinfo = DatabaseHelper.shareInstance.currentUser
-//        var data : Data = UIImagePNGRepresentation(image)
+        let logindetails = UserDefaults.standard.value(forKey: "userid")
+        if logindetails != nil
+        {
+        userIDField.text = UserDefaults.standard.value(forKey: "userid") as? String
+        passwordField.text = UserDefaults.standard.value(forKey: "password") as? String
+        }
+        else
+        {
+            userIDField.text = ""
+            passwordField.text = ""
+        }
     }
-    
+
     @IBOutlet weak var userIDField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
@@ -45,12 +56,62 @@ class SignInViewController: UIViewController {
         {
             if returnValue[0].password == passwordField.text! 
             {
-//                let dh = DatabaseHelper()
-//                photos = dh.retrieveImage(retrieveUserImage: (currentuserinfo?.userid)!)
-//                self.currentuserinfo?.img = photos
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar") 
-                self.navigationController?.pushViewController(vc, animated: true)
+                let context = LAContext()
+                var error: NSError? = nil
+                if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error:  &error)
+                {
+                    let reason = "Please authorize it with a touch Id!"
+               context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] success, error in
+                        DispatchQueue.main.async{
+                        guard success, error == nil else{
+                            // failed
+                    let myAlert = UIAlertController(title: "Failed to Authenticate!", message: "Please try again", preferredStyle: UIAlertController.Style.alert)
+                            myAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+
+                            self?.present(myAlert, animated: true)
+                            
+                            return
+                        }
+                        //show other screen
+                        //success
+                            let alert = UIAlertController(title: "Saving", message: "Do You Want To Save Login Details", preferredStyle: .alert)
+                                
+                            let yesbutton = UIAlertAction(title: "YES", style: .default){ (action) in
+                                
+                                UserDefaults.standard.set(self!.userIDField.text!, forKey: "userid")
+                                UserDefaults.standard.set(self!.passwordField.text!, forKey: "password")
+                                
+                            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar")
+                                self?.navigationController?.pushViewController(vc, animated: true)
+                            
+                                }
+                            let nobutton = UIAlertAction(title: "NO", style: .default) {    (action) in
+                                    print("You Have Not Saved Login Details")
+                                    
+                                
+                            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar")
+                                self?.navigationController?.pushViewController(vc, animated: true)
+                            
+                              // self.performSegue(withIdentifier: "HomeViewController" , sender: self)
+                                }
+                                alert.addAction(yesbutton)
+                                alert.addAction(nobutton)
+                                self!.present(alert,animated: true, completion: nil)
+                    }
+                    }
+                }
+                else{
+                    // can not use
+                    let myAlert = UIAlertController(title: "Unavailable!", message: "You can't use this feature", preferredStyle: UIAlertController.Style.alert)
+                        myAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+
+                            present(myAlert, animated: true)
+                }
+//                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = storyBoard.instantiateViewController(withIdentifier: "TabBar")
+//                self.navigationController?.pushViewController(vc, animated: true)
             }
             else
             {
