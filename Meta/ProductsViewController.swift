@@ -10,7 +10,7 @@ import Combine
 //create protocol
 protocol ProductDetails
 {
-    func productsDetails()
+    func productsDetails(_ ID: Int)
 }
 class ProductsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,6 +18,7 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
     var productdetailid: Int = 0
     static var shareProduct = ProductsViewController()
     private var products = [ProductData]()
+    var product: ProductData!
     
     private var api = ProductManager()
     private var cancellable = Set<AnyCancellable>()
@@ -36,16 +37,16 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
             .store(in: &cancellable)
     }
     
-//    fileprivate func getProductDetails()
-//    {
-//        api.productsDetails(id: <#T##Int#>)
-//            .receive(on: DispatchQueue.main)
-//            .sink { [weak self] (products) in
-//                self?.products = products
-//                self?.productsTable.reloadData()
-//            }
-//            .store(in: &cancellable)
-//    }
+    fileprivate func getProductDetails()
+    {
+        api.productsDetails(ID: product.id)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] (products) in
+                self?.products = products
+                self?.productsTable.reloadData()
+            }
+            .store(in: &cancellable)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,12 +84,15 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
         if (indexPath.row >= 0)
         {
 //            call api, pass prod  id
-            
-            productdetailid = indexPath.row + 1
+//            delegate?.productsDetails(product.id)
 //            getProductDetails()
+//            productdetailid = indexPath.row + 1
 //            ProductModel.shareProduct.productDetailVCId = productdetailid
+            
+            let product = products[indexPath.row]
             let storyBoard: UIStoryboard = UIStoryboard(name: "Product", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+            vc.product = product
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

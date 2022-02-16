@@ -33,6 +33,7 @@ class OverlayView: UIViewController, UINavigationControllerDelegate, UIImagePick
         view.addGestureRecognizer(panGesture)
         
         currentuserinfo = DatabaseHelper.shareInstance.currentUser
+        editNameField.text = currentuserinfo?.name
         profileImage.layer.borderWidth = 0
         profileImage.layer.masksToBounds = false
         profileImage.layer.cornerRadius = profileImage.frame.height/2

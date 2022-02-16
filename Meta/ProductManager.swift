@@ -35,11 +35,11 @@ class ProductManager
         }
     }
     
-    func productsDetails(id: Int) -> Future<[ProductData], Never>
+    func productsDetails(ID: Int) -> Future<[ProductData], Never>
     {
 //        productDetailVCId = ProductsViewController.shareProduct.productdetailid
         return Future{ [self] promise in
-            let taskPublisher = URLSession.shared.dataTaskPublisher(for: URL(string: "http://fakestoreapi.com/products/\(id)")!)
+            let taskPublisher = URLSession.shared.dataTaskPublisher(for: URL(string: "http://fakestoreapi.com/products/\(ID)")!)
 //            print(taskPublisher)
             taskPublisher.map {
                 $0.data

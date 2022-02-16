@@ -242,12 +242,14 @@
         <scene sceneID="Nhq-dg-aGb">
             <objects>
                 <viewController storyboardIdentifier="PrivacyPolicyViewController" id="RzW-AL-z1F" customClass="PrivacyPolicyViewController" customModule="Meta" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0Ss-Lg-kgf">
+                    <activityIndicatorView key="view" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="gwE-WC-71y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hPb-bC-NVz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="color" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </activityIndicatorView>
+                    <connections>
+                        <outlet property="spinnerPP" destination="gwE-WC-71y" id="CDM-an-XEF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZS-Dd-aC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
