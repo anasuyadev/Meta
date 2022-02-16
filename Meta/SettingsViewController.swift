@@ -164,6 +164,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         if indexPath.row == 5
         {
+            UserDefaults.standard.setValue(false, forKey: "userid")
+            UserDefaults.standard.setValue(false, forKey: "password")
+            UIApplication.shared.delegate?.window!?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
             let myAlert = UIAlertController(title: "Logout", message: "Are you sure want to logout?", preferredStyle: UIAlertController.Style.alert)
             let noAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel){(ACTION) in
                 print("No BUTTON TAPPED")

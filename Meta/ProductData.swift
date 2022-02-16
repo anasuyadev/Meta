@@ -13,10 +13,7 @@ struct ProductData: Decodable
     let title: String
     let price: Float
     let description: String
+    let category: String
     let image: String
     
 }
-//struct Title
-//{
-//
-//}
