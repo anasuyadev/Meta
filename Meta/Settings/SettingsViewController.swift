@@ -68,11 +68,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @objc func showMiracle()
     {
-     let slideVC = OverlayView()
+     let slideVC = EditProfileViewController()
         slideVC.modalTransitionStyle = .flipHorizontal
         slideVC.transitioningDelegate = self
         self.present(slideVC, animated: true, completion: nil)
-//        var modalPresent = (self.OverlayView());
+//        var modalPresent = (self.EditProfileViewController());
 //        if modalPresent == true {
         if ((slideVC.isBeingDismissed) != nil){
             userNameLabel.text = currentuserinfo?.name
@@ -214,11 +214,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     private func presentShareSheet() {
-        guard let image = UIImage(systemName: "bell"), let url = URL(string: "https://www.google.com") else {
+        guard let image = UIImage(systemName: "bell"), let url = URL(string: "https://www.wipro.com") else {
             return
         }
-        let shareSheetVC = UIActivityViewController(
-        activityItems: [image,url],applicationActivities: nil)
+        let text = "We are using this application, please download"
+        let textToShare = [ text ]
+        let shareSheetVC = UIActivityViewController(activityItems: [image,url,textToShare], applicationActivities: nil)
         present(shareSheetVC, animated: true)
         }
 }

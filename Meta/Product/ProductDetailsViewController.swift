@@ -33,7 +33,7 @@ class ProductDetailsViewController: UIViewController {
         self.titleLabel.text = product!.title
         self.descriptionLabel.text = product!.description
         self.categoryLabel.text = product!.category
-        self.priceLabel.text = "\(product!.price)"
+        self.priceLabel.text = "$\(product!.price)"
         let url = URL(string: product!.image)!
         DispatchQueue.global().async {
                if let data = try? Data(contentsOf: url) {

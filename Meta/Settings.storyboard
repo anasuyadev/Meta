@@ -239,21 +239,32 @@
             <point key="canvasLocation" x="695" y="47"/>
         </scene>
         <!--Privacy Policy View Controller-->
-        <scene sceneID="Nhq-dg-aGb">
+        <scene sceneID="LSK-9m-kER">
             <objects>
-                <viewController storyboardIdentifier="PrivacyPolicyViewController" id="RzW-AL-z1F" customClass="PrivacyPolicyViewController" customModule="Meta" customModuleProvider="target" sceneMemberID="viewController">
-                    <activityIndicatorView key="view" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="gwE-WC-71y">
+                <viewController storyboardIdentifier="PrivacyPolicyViewController" id="Bwc-Jf-E7s" customClass="PrivacyPolicyViewController" customModule="Meta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vqn-P2-79C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="color" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </activityIndicatorView>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="tI8-vk-dgJ">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QCu-wE-dBp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tI8-vk-dgJ" firstAttribute="centerY" secondItem="vqn-P2-79C" secondAttribute="centerY" id="d6b-zG-e0S"/>
+                            <constraint firstItem="tI8-vk-dgJ" firstAttribute="centerX" secondItem="vqn-P2-79C" secondAttribute="centerX" id="qMQ-Pz-gTa"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="spinnerPP" destination="gwE-WC-71y" id="CDM-an-XEF"/>
+                        <outlet property="spinner" destination="tI8-vk-dgJ" id="rem-fI-CwE"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mZS-Dd-aC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EE9-zf-ilc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1374" y="45"/>
+            <point key="canvasLocation" x="1369" y="47"/>
         </scene>
         <!--Terms And Conditions View Controller-->
         <scene sceneID="Lk0-nK-xou">
@@ -262,9 +273,22 @@
                     <view key="view" contentMode="scaleToFill" id="feH-3m-ORX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="laM-D4-mj8">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.35782645759999998" green="0.4395851751" blue="0.47584683550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2Ig-Vn-Idi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="laM-D4-mj8" firstAttribute="centerX" secondItem="feH-3m-ORX" secondAttribute="centerX" id="NVs-pE-UZm"/>
+                            <constraint firstItem="laM-D4-mj8" firstAttribute="centerY" secondItem="feH-3m-ORX" secondAttribute="centerY" id="V0o-qA-A97"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="spinner" destination="laM-D4-mj8" id="NEP-Mh-ApX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7s-RN-xh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

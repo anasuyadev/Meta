@@ -2,14 +2,16 @@
 //  EditProfileViewController.swift
 //  Meta
 //
-//  Created by Anasuya Dev on 06/02/22.
+//  Created by Anasuya Dev on 09/02/22.
 //
 
 import UIKit
 import MobileCoreServices
 
-class EditProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-   
+class EditProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate
+{
+    var hassetPointOrigin = false
+    var pointOrigin: CGPoint?
     var currentuserinfo: UserInfo?
     
     @IBOutlet weak var editNameField: UITextField!
@@ -22,16 +24,49 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
         DatabaseHelper.shareInstance.editProfile(editUserID: (currentuserinfo?.userid)!, editedName: editNameField.text!)
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let panGesture = UITapGestureRecognizer(target: self, action: #selector(panGestureRecognizeAction))
+        view.addGestureRecognizer(panGesture)
+        
         currentuserinfo = DatabaseHelper.shareInstance.currentUser
+        editNameField.text = currentuserinfo?.name
         profileImage.layer.borderWidth = 0
         profileImage.layer.masksToBounds = false
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
+        
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        if !hassetPointOrigin
+        {
+            hassetPointOrigin = true
+            pointOrigin = self.view.frame.origin
+        }
+    }
+    
+    @objc func panGestureRecognizeAction(sender: UIPanGestureRecognizer)
+    {
+        let translation = sender.translation(in: view)
+        guard translation.y >= 0 else {return}
+        view.frame.origin = CGPoint(x: 0,y: self.pointOrigin!.y + translation.y)
+        if sender.state == .ended {
+            let dragVelocity =  sender.velocity(in: view)
+            if dragVelocity.y >= 1300 {
+                self.dismiss(animated: true, completion: nil)
+            }
+            else{
+                UIView.animate(withDuration: 0.3){
+                    self.view.frame.origin = self.pointOrigin ?? CGPoint(x: 0, y: 400)
+                }
+            }
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         currentuserinfo = DatabaseHelper.shareInstance.currentUser
@@ -105,7 +140,4 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
         {
             return input.rawValue
         }
-    }
-    
-   
-
+}

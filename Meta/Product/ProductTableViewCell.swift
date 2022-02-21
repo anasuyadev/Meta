@@ -18,11 +18,11 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     @IBOutlet weak var productImage: UIImageView!
-//    @IBOutlet weak var titleLabel: UILabel!
-//    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UITextView!
-    @IBOutlet weak var titleLabel: UITextView!
+//    @IBOutlet weak var descriptionLabel: UITextView!
+//    @IBOutlet weak var titleLabel: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
