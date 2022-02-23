@@ -7,19 +7,78 @@
 
 import UIKit
 
-class ChangePasswordViewController: UIViewController {
+class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
 
     var currentuserinfo: UserInfo?
+    var iconClick = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.currentPasswordField.tag = 0
+        self.newPasswordField.tag = 1
+        self.confirmPasswordField.tag = 2
+        
+        self.currentPasswordField.delegate = self
+        self.newPasswordField.delegate = self
+        self.confirmPasswordField.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+         view.addGestureRecognizer(tapGesture)
         currentuserinfo = DatabaseHelper.shareInstance.currentUser
+    }
+    
+    private func tagBasedTextField(_ textField: UITextField) {
+        let nextTextFieldTag = textField.tag + 1
+
+        if let nextTextField = textField.superview?.viewWithTag(nextTextFieldTag) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.tagBasedTextField(textField)
+        return true
     }
     
     @IBOutlet weak var currentPasswordField: UITextField!
     @IBOutlet weak var newPasswordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
+    
+    @IBAction func iconAction(sender: AnyObject) {
+            if(iconClick == true) {
+                currentPasswordField.isSecureTextEntry = false
+
+                
+            } else {
+                currentPasswordField.isSecureTextEntry = true
+            }
+
+            iconClick = !iconClick
+        }
+    
+    
+    @IBAction func eyeAction(sender: AnyObject) {
+            if(iconClick == true) {
+                newPasswordField.isSecureTextEntry = false
+            } else {
+               newPasswordField.isSecureTextEntry = true
+
+            }
+
+            iconClick = !iconClick
+        }
+    
+    @IBAction func eyesAction(sender: AnyObject) {
+            if(iconClick == true) {
+                confirmPasswordField.isSecureTextEntry = false
+            
+            } else {
+               confirmPasswordField.isSecureTextEntry = true
+            }
+
+            iconClick = !iconClick
+        }
     
     @IBAction func saveButton(_ sender: UIButton) {
         let password = newPasswordField.text

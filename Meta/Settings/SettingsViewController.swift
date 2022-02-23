@@ -8,9 +8,16 @@
 import UIKit
 import MobileCoreServices
 
-class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, EditDelegate {
+    
 
     var currentuserinfo: UserInfo?
+    let slideVC = EditProfileViewController()
+//    var shareEdit = EditProfileViewController()
+//    static var shareReload = SettingsViewController()
+//    var username: UILabel?
+//    var text: String?
+//    var nameStr:String! = nil
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
@@ -35,6 +42,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         profileImage.layer.masksToBounds = false
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
+        slideVC.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,7 +76,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @objc func showMiracle()
     {
-     let slideVC = EditProfileViewController()
+     
         slideVC.modalTransitionStyle = .flipHorizontal
         slideVC.transitioningDelegate = self
         self.present(slideVC, animated: true, completion: nil)
@@ -83,6 +91,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func editName(_ name: String,_ imageEdit: UIImage)
+    {
+        userNameLabel.text = name
+        profileImage.image = imageEdit
+    }
+
     // MARK: - Table view data source
 
     
@@ -113,6 +127,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
          }
          if indexPath.row == 4
          {
+//             cell.backgroundColor = UIColor.red
              cell.titleLabel.text = "Delete User"
          }
          if indexPath.row == 5
@@ -147,6 +162,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
          }
         if indexPath.row == 4
         {
+            UserDefaults.standard.setValue(false, forKey: "userid")
+            UserDefaults.standard.setValue(false, forKey: "password")
             let myAlert = UIAlertController(title: "Delete User", message: "Are you sure want to delete your account?", preferredStyle: UIAlertController.Style.alert)
             let noAction = UIAlertAction(title: "No", style: UIAlertAction.Style.cancel){(ACTION) in
                 print("No BUTTON TAPPED")

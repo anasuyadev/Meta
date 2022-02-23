@@ -6,9 +6,9 @@
 //
 
 import UIKit
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
-    
+    var iconClick = true
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var nameField: UITextField!
@@ -17,6 +17,27 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     
+    @IBAction func iconAction(sender: AnyObject) {
+            if(iconClick == true) {
+                passwordField.isSecureTextEntry = false
+               
+            } else {
+                passwordField.isSecureTextEntry  = true
+            }
+            iconClick = !iconClick
+        }
+
+    @IBAction func eyeAction(sender: AnyObject) {
+            if(iconClick == true) {
+                confirmPasswordField.isSecureTextEntry = false
+               
+            } else {
+                confirmPasswordField.isSecureTextEntry  = true
+               
+            }
+
+            iconClick = !iconClick
+        }
     
     @IBAction func signUpButton(_ sender: UIButton) {
         let password = passwordField.text
@@ -102,7 +123,22 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.nameField.tag = 0
+        self.birthDateField.tag = 1
+        self.userIDField.tag = 2
+        self.passwordField.tag = 3
+        self.confirmPasswordField.tag = 4
+    
+    
+        self.nameField.delegate = self
+        self.birthDateField.delegate = self
+        self.userIDField.delegate = self
+        self.passwordField.delegate = self
+        self.confirmPasswordField.delegate = self
+    
+    let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+     view.addGestureRecognizer(tapGesture)
+    
         datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
     }
@@ -117,6 +153,20 @@ class SignUpViewController: UIViewController {
            formatter.dateFormat = "dd MMM yyyy"
            return formatter.string(from: datePicker.date)
        }
+    
+    private func tagBasedTextField(_ textField: UITextField) {
+        let nextTextFieldTag = textField.tag + 1
+
+        if let nextTextField = textField.superview?.viewWithTag(nextTextFieldTag) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.tagBasedTextField(textField)
+        return true
+    }
     
 }
 

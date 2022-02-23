@@ -106,10 +106,9 @@
                             <constraint firstAttribute="trailing" secondItem="elg-DN-grI" secondAttribute="trailing" id="tqG-MB-eIx"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="s7h-vI-3xj">
+                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="s7h-vI-3xj">
                         <color key="badgeColor" red="0.32918897819999998" green="0.76404127990000004" blue="0.53555228610000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="q2E-Dz-Qdw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="profileImage" destination="h9F-Uf-gpS" id="7DO-vM-AKi"/>
@@ -124,6 +123,7 @@
     <resources>
         <image name="245-2454602_tanni-chand-default-user-image-png" width="502" height="502"/>
         <image name="9D954A84-CB5C-43D4-9823-0AA20A17AC08_1_201_a" width="1080" height="1920"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

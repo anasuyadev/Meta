@@ -31,22 +31,24 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
         api.products()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (products) in
+                self?.spinner.stopAnimating()
+                self?.spinner.isHidden = true
                 self?.products = products
                 self?.productsTable.reloadData()
             }
             .store(in: &cancellable)
     }
     
-    fileprivate func getProductDetails()
-    {
-        api.productsDetails(ID: product.id)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] (products) in
-                self?.products = products
-                self?.productsTable.reloadData()
-            }
-            .store(in: &cancellable)
-    }
+//    fileprivate func getProductDetails()
+//    {
+//        api.productsDetails(ID: product.id)
+//            .receive(on: DispatchQueue.main)
+//            .sink { [weak self] (products) in
+//                self?.products = products
+//                self?.productsTable.reloadData()
+//            }
+//            .store(in: &cancellable)
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

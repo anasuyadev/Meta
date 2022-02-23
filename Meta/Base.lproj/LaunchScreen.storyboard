@@ -19,18 +19,28 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9D954A84-CB5C-43D4-9823-0AA20A17AC08_1_201_a" translatesAutoresizingMaskIntoConstraints="NO" id="uMb-UV-bRS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkP-wa-GaN">
-                                <rect key="frame" x="138" y="411" width="138" height="74"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoptastic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkP-wa-GaN">
+                                <rect key="frame" x="65" y="411" width="284" height="74"/>
                                 <fontDescription key="fontDescription" name="Charter-BoldItalic" family="Charter" pointSize="60"/>
                                 <color key="textColor" red="0.40856724420000001" green="0.50128756090000004" blue="0.54081290240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="p8F-Zh-1Bv">
+                                <rect key="frame" x="172" y="357" width="70" height="70"/>
+                                <color key="tintColor" red="0.40856724420000001" green="0.50128756090000004" blue="0.54081290240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="G1f-zY-Rpl"/>
+                                    <constraint firstAttribute="width" constant="70" id="sy2-DS-6Sf"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="QkP-wa-GaN" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6zV-6b-Alu"/>
                             <constraint firstItem="uMb-UV-bRS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8Zo-Kp-QEB"/>
+                            <constraint firstItem="QkP-wa-GaN" firstAttribute="top" secondItem="p8F-Zh-1Bv" secondAttribute="bottom" constant="-16.5" id="Hy3-B6-LZP"/>
+                            <constraint firstItem="p8F-Zh-1Bv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="J5B-HG-sVB"/>
                             <constraint firstAttribute="bottom" secondItem="uMb-UV-bRS" secondAttribute="bottom" id="cKq-Oe-6nh"/>
                             <constraint firstItem="QkP-wa-GaN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dQN-Gv-ex2"/>
                             <constraint firstItem="uMb-UV-bRS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="lkq-bt-Op7"/>
@@ -45,6 +55,7 @@
     </scenes>
     <resources>
         <image name="9D954A84-CB5C-43D4-9823-0AA20A17AC08_1_201_a" width="1080" height="1920"/>
+        <image name="cart.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -17,6 +17,7 @@
 		615C6D7C27B2CC2D001C42BF /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C6D7B27B2CC2D001C42BF /* AuthenticationService.swift */; };
 		61773FA327969A7F00FF84D8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61773FA227969A7F00FF84D8 /* CoreData.framework */; };
 		61773FA527969CE900FF84D8 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61773FA427969CE900FF84D8 /* DatabaseHelper.swift */; };
+		619D25B627C60418005C3F66 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619D25B527C60418005C3F66 /* TabBarViewController.swift */; };
 		61A5BC2C27B41A7400EFF60D /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BC2B27B41A7400EFF60D /* PresentationController.swift */; };
 		61A5BC2E27B43AA500EFF60D /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61A5BC2D27B43AA500EFF60D /* EditProfileViewController.xib */; };
 		61A5BC3027B43F8C00EFF60D /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A5BC2F27B43F8C00EFF60D /* EditProfileViewController.swift */; };
@@ -52,6 +53,7 @@
 		615C6D7B27B2CC2D001C42BF /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		61773FA227969A7F00FF84D8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		61773FA427969CE900FF84D8 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		619D25B527C60418005C3F66 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		61A5BC2B27B41A7400EFF60D /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		61A5BC2D27B43AA500EFF60D /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		61A5BC2F27B43F8C00EFF60D /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -102,11 +104,11 @@
 		613A3E6827BF70FB00745114 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				6109C95127ABD89F00CE264B /* ProductData.swift */,
-				6109C95327ABD8B200CE264B /* ProductManager.swift */,
 				614FB28927AC6A6E00C7AD38 /* ProductsViewController.swift */,
 				614FB28F27AC6EBB00C7AD38 /* ProductTableViewCell.swift */,
 				6109C94F27ABAD7400CE264B /* ProductDetailsViewController.swift */,
+				6109C95127ABD89F00CE264B /* ProductData.swift */,
+				6109C95327ABD8B200CE264B /* ProductManager.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -156,12 +158,13 @@
 			children = (
 				61ECDA1A27956ACF00069A8E /* AppDelegate.swift */,
 				61ECDA1C27956ACF00069A8E /* SceneDelegate.swift */,
-				61ECDA1E27956ACF00069A8E /* ViewController.swift */,
 				61773FA427969CE900FF84D8 /* DatabaseHelper.swift */,
 				61A88AD42797EC0B002F91BF /* UserInfo+CoreDataClass.swift */,
 				61A88AD52797EC0B002F91BF /* UserInfo+CoreDataProperties.swift */,
+				61ECDA1E27956ACF00069A8E /* ViewController.swift */,
 				61ECDA30279584D600069A8E /* SignUpViewController.swift */,
 				61ECDA2E27957F4200069A8E /* SignInViewController.swift */,
+				619D25B527C60418005C3F66 /* TabBarViewController.swift */,
 				613A3E6727BF70BE00745114 /* Home */,
 				613A3E6827BF70FB00745114 /* Product */,
 				613A3E6927BF715500745114 /* Settings */,
@@ -266,6 +269,7 @@
 				611691CA2795C4DF0063824F /* CoreDataModel.xcdatamodeld in Sources */,
 				615C6D7C27B2CC2D001C42BF /* AuthenticationService.swift in Sources */,
 				61ECDA31279584D600069A8E /* SignUpViewController.swift in Sources */,
+				619D25B627C60418005C3F66 /* TabBarViewController.swift in Sources */,
 				6109C95027ABAD7400CE264B /* ProductDetailsViewController.swift in Sources */,
 				61485F7A27993A62002DCCF7 /* TableViewCell.swift in Sources */,
 				61ECDA1B27956ACF00069A8E /* AppDelegate.swift in Sources */,

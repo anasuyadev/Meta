@@ -9,13 +9,24 @@ import UIKit
 import CoreData
 import LocalAuthentication
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
     
     var photos = [UserInfo]()
     var currentuserinfo: UserInfo?
+    var iconClick = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+         view.addGestureRecognizer(tapGesture)
+        currentuserinfo = DatabaseHelper.shareInstance.currentUser
+
+        self.userIDField.tag = 0
+        self.passwordField.tag = 1
+        
+        self.userIDField.delegate = self
+        self.passwordField.delegate = self
+        
         currentuserinfo = DatabaseHelper.shareInstance.currentUser
         let logindetails = UserDefaults.standard.value(forKey: "userid")
         if logindetails != nil
@@ -29,9 +40,43 @@ class SignInViewController: UIViewController {
             passwordField.text = ""
         }
     }
+    
+    private func tagBasedTextField(_ textField: UITextField) {
+        let nextTextFieldTag = textField.tag + 1
+
+        if let nextTextField = textField.superview?.viewWithTag(nextTextFieldTag) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.tagBasedTextField(textField)
+        return true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
     @IBOutlet weak var userIDField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
+    @IBAction func iconAction(sender: AnyObject) {
+            if(iconClick == true) {
+                passwordField.isSecureTextEntry = false
+            } else {
+                passwordField.isSecureTextEntry  = true
+            }
+
+            iconClick = !iconClick
+        }
     
     @IBAction func signInButton(_ sender: UIButton) {
         if userIDField.text == "" {
