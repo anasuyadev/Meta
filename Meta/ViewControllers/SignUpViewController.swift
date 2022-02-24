@@ -117,6 +117,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     }
+    
+    @IBAction func facebookLoginButton(_ sender: UIButton) {
+    }
+    
+    
     @IBAction func signInButton(_ sender: UIButton) {
 
     }

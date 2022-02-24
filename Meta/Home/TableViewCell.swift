@@ -7,9 +7,8 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell, EditHomeDelegate {
+class TableViewCell: UITableViewCell {
 
-    let shareVC = EditProfileViewController()
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var outputLabel: UILabel!
@@ -17,7 +16,6 @@ class TableViewCell: UITableViewCell, EditHomeDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        shareVC.homeDelegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,11 +23,4 @@ class TableViewCell: UITableViewCell, EditHomeDelegate {
 
         
     }
-    
-    func editNameHome(_ nameHome: String)
-    {
-        titleLabel.text = nameHome
-       
-    }
-
 }

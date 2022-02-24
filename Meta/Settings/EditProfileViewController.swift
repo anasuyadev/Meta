@@ -10,9 +10,6 @@ import MobileCoreServices
 protocol EditDelegate: class {
     func editName(_ name: String,_ imageEdit: UIImage)
 }
-protocol EditHomeDelegate: class {
-    func editNameHome(_ nameHome: String)
-}
 
 class EditProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate
 {
@@ -20,7 +17,6 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
     var pointOrigin: CGPoint?
     var currentuserinfo: UserInfo?
     weak var delegate: EditDelegate?
-    weak var homeDelegate: EditHomeDelegate?
     
     @IBOutlet weak var editNameField: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
@@ -31,7 +27,6 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
     @IBAction func saveButton(_ sender: UIButton) {
         DatabaseHelper.shareInstance.editProfile(editUserID: (currentuserinfo?.userid)!, editedName: editNameField.text!)
         delegate?.editName(editNameField.text!, profileImage.image!)
-        homeDelegate?.editNameHome(editNameField.text!)
     }
     
     
